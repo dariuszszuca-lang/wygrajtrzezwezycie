@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wygraj Trzeźwe Życie - Krystian Nagaba</title>
+    <meta name="description" content="Książka o uzależnieniu bez ściemy - praktyczny plan wyjścia. 10 lat doświadczenia, setki rozmów, sprawdzone metody.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --mint: #b8d4ce;
+            --mint-light: #e8f4f1;
+            --dark: #1a1a1a;
+            --gold: #f5c842;
+            --gray: #555;
+            --light-bg: #f5f5f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+            background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero-text h1 span {
+            color: var(--mint);
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.25rem;
+            color: #bbb;
+            margin-bottom: 16px;
+        }
+
+        .hero-text .tagline {
+            font-size: 1.1rem;
+            color: #888;
+            margin-bottom: 32px;
+        }
+
+        .hero-text .release-date {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--mint);
+            color: var(--dark);
+        }
+
+        .btn-primary:hover {
+            background: #9ac4bb;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #444;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--mint);
+            color: var(--mint);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            max-height: 600px;
+            filter: drop-shadow(0 40px 80px rgba(0,0,0,0.5));
+        }
+
+        /* FEATURES */
+        .features {
+            padding: 100px 0;
+            background: var(--light-bg);
+            color: var(--dark);
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .features .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 4px 40px rgba(0,0,0,0.05);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--mint);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* WHAT'S INSIDE */
+        .whats-inside {
+            padding: 100px 0;
+            background: var(--dark);
+        }
+
+        .whats-inside h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 60px;
+        }
+
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .chapter-item {
+            display: flex;
+            gap: 20px;
+            padding: 24px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .chapter-number {
+            width: 48px;
+            height: 48px;
+            background: var(--mint);
+            color: var(--dark);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .chapter-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .chapter-content p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* AUTHOR */
+        .author {
+            padding: 100px 0;
+            background: var(--light-bg);
+            color: var(--dark);
+        }
+
+        .author-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .author-image {
+            position: relative;
+        }
+
+        .author-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .author-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--mint);
+            color: var(--dark);
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .author-text h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .author-text .author-title {
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+        }
+
+        .author-text p {
+            color: #444;
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+        }
+
+        .author-text .highlight {
+            background: var(--mint);
+            padding: 20px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            margin-top: 24px;
+        }
+
+        .author-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 32px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: #888;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        .cta-section .btn-primary {
+            font-size: 1.1rem;
+            padding: 20px 48px;
+        }
+
+        .stores {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .store-link {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .store-link:hover {
+            color: var(--mint);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 40px 0;
+            background: #111;
+            text-align: center;
+        }
+
+        footer p {
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--mint);
+            text-decoration: none;
+        }
+
+        /* FLOATING CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--mint);
+            color: var(--dark);
+            padding: 16px 32px;
+            border-radius: 100px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .floating-cta:hover {
+            transform: translateX(-50%) translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-image img {
+                max-height: 400px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chapters-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .author-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .author-image {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+
+            .author-badge {
+                right: 50%;
+                transform: translateX(50%);
+            }
+
+            .author-stats {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .features h2,
+            .whats-inside h2,
+            .author-text h2,
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .floating-cta {
+                padding: 14px 24px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="release-date">PREMIERA 28 STYCZNIA 2026</span>
+                    <h1>Wygraj <span>Trzeźwe</span> Życie</h1>
+                    <p class="subtitle">O uzależnieniu bez ściemy - praktyczny plan wyjścia</p>
+                    <p class="tagline">10 lat doświadczenia. Setki rozmów. Sprawdzone metody. Jedna książka.</p>
+                    <div class="cta-buttons">
+                        <a href="#kup" class="btn btn-primary">Kup w przedsprzedaży</a>
+                        <a href="#o-ksiazce" class="btn btn-secondary">Dowiedz się więcej</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="img/ksiazka-3d.png" alt="Książka Wygraj Trzeźwe Życie - Krystian Nagaba">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" id="o-ksiazce">
+        <div class="container">
+            <h2>Dla kogo jest ta książka?</h2>
+            <p class="section-subtitle">Jeśli choć raz pomyślałeś "muszę coś zmienić" - ta książka jest dla Ciebie</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Dla osób uzależnionych</h3>
+                    <p>Które szukają prawdziwego zrozumienia swojej sytuacji i konkretnego planu działania - bez moralizowania i oceniania.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💚</div>
+                    <h3>Dla rodzin i bliskich</h3>
+                    <p>Którzy chcą zrozumieć mechanizmy uzależnienia i dowiedzieć się jak naprawdę mogą pomóc - bez wypalania się.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Dla osób po terapii</h3>
+                    <p>Które potrzebują przewodnika na co dzień - jak utrzymać trzeźwość, rozpoznawać wyzwalacze i budować nowe życie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT'S INSIDE -->
+    <section class="whats-inside">
+        <div class="container">
+            <h2>Co znajdziesz w książce?</h2>
+
+            <div class="chapters-grid">
+                <div class="chapter-item">
+                    <div class="chapter-number">I</div>
+                    <div class="chapter-content">
+                        <h4>Jak wszystko się zaczyna</h4>
+                        <p>Dlaczego się uzależniamy? Podłoże neurologiczne, rola dzieciństwa, etapy rozwoju choroby.</p>
+                    </div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-number">II</div>
+                    <div class="chapter-content">
+                        <h4>Jak podjąć walkę</h4>
+                        <p>5 kroków wyjścia z uzależnienia. Dlaczego "poradzę sobie sam" nie działa. Jak znaleźć pomoc.</p>
+                    </div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-number">III</div>
+                    <div class="chapter-content">
+                        <h4>Co powinieneś wiedzieć o sobie</h4>
+                        <p>Bilans zysków i strat. Dziennik 1%. Mapa marzeń - po co Ci trzeźwość?</p>
+                    </div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-number">IV</div>
+                    <div class="chapter-content">
+                        <h4>Jak wytrwać w trzeźwości</h4>
+                        <p>Wyzwalacze i głody. Metoda HALT. Sieć wsparcia. 4 filary długoterminowej trzeźwości.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTHOR -->
+    <section class="author">
+        <div class="container">
+            <div class="author-content">
+                <div class="author-image">
+                    <img src="img/okladka-500.jpg" alt="Krystian Nagaba">
+                    <span class="author-badge">Trzeźwy od 2018</span>
+                </div>
+                <div class="author-text">
+                    <h2>Krystian Nagaba</h2>
+                    <p class="author-title">Certyfikowany Instruktor Terapii Uzależnień</p>
+
+                    <p>Jestem osobą uzależnioną od narkotyków i alkoholu. Przez ponad 20 lat czynnie zażywałem środki psychoaktywne. Musiałem osiągnąć swoje dno - straciłem wszystko co było do stracenia. Od pieniędzy po relacje.</p>
+
+                    <p>Na szczęście podjąłem decyzję by w końcu zrobić porządek w swoim życiu. Po ciężkich walkach i pracy nad sobą jestem świetnym przykładem zmiany. <strong>Dokładnie wiem, jak to jest być uzależnionym i jak to jest wspaniale być trzeźwym człowiekiem od 2018 roku.</strong></p>
+
+                    <p>Mówią o mnie, że jestem bardzo szczery i prawdziwy w tym co robię, ponieważ poza teorią mam jeszcze 20 lat praktyki uzależnienia. Od 2021 roku całym sercem jestem oddany ośrodkowi "My Way".</p>
+
+                    <div class="highlight">
+                        Moim celem i misją życia jest nauczyć jak największą liczbę osób żyć na trzeźwo.
+                    </div>
+
+                    <div class="author-stats">
+                        <div class="stat">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">lat pracy z uzależnionymi</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">osób przeszło przez terapię</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">40k+</div>
+                            <div class="stat-label">obserwujących na FB</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="kup">
+        <div class="container">
+            <h2>Zamów książkę w przedsprzedaży</h2>
+            <p>Premiera 28 stycznia 2026. Zamów teraz i bądź wśród pierwszych czytelników.</p>
+
+            <a href="https://www.empik.com/wygraj-trzezwe-zycie-nagaba-krystian,p1517829388,ksiazka-p" class="btn btn-primary" target="_blank">
+                Kup na Empik.com
+            </a>
+
+            <div class="stores">
+                <a href="https://www.empik.com/wygraj-trzezwe-zycie-nagaba-krystian,p1517829388,ksiazka-p" class="store-link" target="_blank">Empik</a>
+                <a href="#" class="store-link">Woblink</a>
+                <a href="#" class="store-link">Bonito</a>
+                <a href="#" class="store-link">Świat Książki</a>
+                <a href="#" class="store-link">Allegro</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>Wydawnictwo Feeria | <a href="https://osrodek-myway.pl" target="_blank">osrodek-myway.pl</a> | tel. 731 395 295</p>
+        </div>
+    </footer>
+
+    <!-- FLOATING CTA -->
+    <a href="#kup" class="floating-cta">Kup w przedsprzedaży</a>
+
+</body>
+</html>
