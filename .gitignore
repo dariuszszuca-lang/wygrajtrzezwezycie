@@ -1,1 +1,6 @@
 .ssh/
+
+# Security - never commit env files
+.env
+.env.*
+!.env.example
